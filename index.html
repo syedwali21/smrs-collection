@@ -10,28 +10,29 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
+  scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,sans-serif;
-  background:#0b0b0b;
+  background:#080808;
   color:white;
 }
 
 header{
-  background:#000;
-  padding:18px 7%;
+  position:sticky;
+  top:0;
+  z-index:1000;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-  border-bottom:1px solid #222;
+  padding:18px 7%;
+  background:rgba(8,8,8,.95);
+  border-bottom:1px solid #292929;
 }
 
 .logo{
-  font-size:27px;
+  font-size:25px;
   font-weight:bold;
   letter-spacing:2px;
 }
@@ -39,8 +40,12 @@ header{
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:20px;
+  margin-left:25px;
   font-size:14px;
+}
+
+nav a:hover{
+  color:#d8b4fe;
 }
 
 .hero{
@@ -50,116 +55,139 @@ nav a{
   justify-content:center;
   text-align:center;
   padding:40px 20px;
-  background:linear-gradient(135deg,#111,#252525,#050505);
+  background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
+    url("banner.jpg") center/cover no-repeat;
+}
+
+.hero-box{
+  max-width:800px;
 }
 
 .hero h1{
-  font-size:55px;
-  letter-spacing:4px;
+  font-size:clamp(40px,7vw,78px);
+  letter-spacing:3px;
   margin-bottom:15px;
 }
 
 .hero p{
-  color:#bbb;
-  font-size:18px;
-  margin-bottom:25px;
+  font-size:20px;
+  color:#ddd;
+  margin-bottom:30px;
 }
 
 .btn{
   display:inline-block;
+  padding:14px 28px;
+  border-radius:30px;
   background:white;
   color:black;
-  padding:13px 25px;
-  border-radius:5px;
   text-decoration:none;
   font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  background:#ddd;
 }
 
 section{
-  padding:55px 7%;
+  padding:70px 7%;
 }
 
 .title{
   text-align:center;
-  font-size:30px;
-  margin-bottom:35px;
+  font-size:35px;
+  margin-bottom:40px;
 }
 
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
+  gap:25px;
 }
 
 .card{
-  background:#151515;
-  border-radius:10px;
-  overflow:hidden;
+  background:#121212;
   border:1px solid #292929;
+  border-radius:18px;
+  overflow:hidden;
+  transition:.3s;
 }
 
-.product-image{
-  height:280px;
-  background:linear-gradient(135deg,#333,#111);
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#777;
+}
+
+.product-img{
+  height:260px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:50px;
+  background:linear-gradient(135deg,#222,#0b0b0b);
+  font-size:75px;
 }
 
-.info{
-  padding:18px;
+.card-content{
+  padding:22px;
 }
 
-.info h3{
-  margin-bottom:8px;
+.card h3{
+  font-size:20px;
+  margin-bottom:10px;
 }
 
 .price{
-  color:#ccc;
-  margin-bottom:15px;
+  color:#bbb;
+  margin-bottom:18px;
 }
 
-.order{
-  display:block;
-  text-align:center;
+.cart-btn{
+  width:100%;
+  border:0;
+  padding:13px;
+  border-radius:10px;
   background:white;
   color:black;
-  padding:11px;
-  text-decoration:none;
-  border-radius:5px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .about{
   text-align:center;
-  max-width:700px;
+  max-width:750px;
   margin:auto;
-  color:#bbb;
+  color:#ccc;
   line-height:1.8;
 }
 
 .contact{
   text-align:center;
-  background:#111;
+  background:#101010;
+}
+
+.social{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:25px;
 }
 
 .social a{
-  display:inline-block;
+  border:1px solid #555;
+  padding:12px 18px;
+  border-radius:10px;
   color:white;
   text-decoration:none;
-  margin:8px;
-  border:1px solid #444;
-  padding:10px 18px;
-  border-radius:5px;
 }
 
 footer{
   text-align:center;
   padding:25px;
-  background:#000;
-  color:#777;
-  font-size:13px;
+  color:#888;
+  border-top:1px solid #222;
 }
 
 @media(max-width:600px){
@@ -168,12 +196,16 @@ footer{
   }
 
   nav a{
-    margin-left:8px;
+    margin-left:10px;
     font-size:12px;
   }
 
-  .hero h1{
-    font-size:38px;
+  .hero{
+    min-height:65vh;
+  }
+
+  section{
+    padding:55px 5%;
   }
 }
 </style>
@@ -183,6 +215,7 @@ footer{
 
 <header>
   <div class="logo">SMR'S</div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
@@ -192,7 +225,7 @@ footer{
 </header>
 
 <section class="hero" id="home">
-  <div>
+  <div class="hero-box">
     <h1>SMR'S COLLECTION</h1>
     <p>Premium Style. Simple. Modern.</p>
     <a class="btn" href="#products">SHOP NOW</a>
@@ -200,43 +233,43 @@ footer{
 </section>
 
 <section id="products">
-  <h2 class="title">OUR PRODUCTS</h2>
+  <h2 class="title">OUR COLLECTION</h2>
 
   <div class="products">
 
     <div class="card">
-      <div class="product-image">👕</div>
-      <div class="info">
+      <div class="product-img">👕</div>
+      <div class="card-content">
         <h3>Premium T-Shirt</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+        <p class="price">Contact Us</p>
+        <button class="cart-btn">ADD TO CART</button>
       </div>
     </div>
 
     <div class="card">
-      <div class="product-image">👕</div>
-      <div class="info">
+      <div class="product-img">👕</div>
+      <div class="card-content">
         <h3>Oversized T-Shirt</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+        <p class="price">Contact Us</p>
+        <button class="cart-btn">ADD TO CART</button>
       </div>
     </div>
 
     <div class="card">
-      <div class="product-image">👖</div>
-      <div class="info">
+      <div class="product-img">👖</div>
+      <div class="card-content">
         <h3>Track Pants</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+        <p class="price">Contact Us</p>
+        <button class="cart-btn">ADD TO CART</button>
       </div>
     </div>
 
     <div class="card">
-      <div class="product-image">🧥</div>
-      <div class="info">
+      <div class="product-img">🧥</div>
+      <div class="card-content">
         <h3>Tracksuit</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+        <p class="price">Contact Us</p>
+        <button class="cart-btn">ADD TO CART</button>
       </div>
     </div>
 
@@ -245,28 +278,28 @@ footer{
 
 <section id="about">
   <h2 class="title">ABOUT SMR'S</h2>
+
   <p class="about">
-    SMR'S is a modern clothing collection focused on stylish,
-    comfortable and quality everyday wear.
+    SMR'S COLLECTION is a modern clothing brand focused on
+    stylish, comfortable and quality everyday wear.
+    Our goal is simple — premium style at an affordable price.
   </p>
 </section>
 
 <section class="contact" id="contact">
   <h2 class="title">CONTACT US</h2>
 
-  <p style="margin-bottom:20px;">
-    WhatsApp: 0332 5189132
-  </p>
+  <p>For orders and inquiries, contact us on WhatsApp.</p>
 
   <div class="social">
     <a href="#">Instagram</a>
     <a href="#">Facebook</a>
-    <a href="https://wa.me/923325189132">WhatsApp</a>
+    <a href="#">WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  © 2026 SMR'S COLLECTION. All Rights Reserved.
+  © 2026 SMR'S COLLECTION — All Rights Reserved
 </footer>
 
 </body>
