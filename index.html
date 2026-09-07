@@ -50,7 +50,9 @@ nav a{
   justify-content:center;
   text-align:center;
   padding:40px 20px;
-  background:linear-gradient(135deg,#111,#252525,#050505);
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
+    url('banner.jpg') center/cover no-repeat;
 }
 
 .hero h1{
@@ -60,7 +62,7 @@ nav a{
 }
 
 .hero p{
-  color:#bbb;
+  color:#ddd;
   font-size:18px;
   margin-bottom:25px;
 }
@@ -85,50 +87,38 @@ section{
   margin-bottom:35px;
 }
 
-.products{
+.categories{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
 }
 
-.card{
+.category{
   background:#151515;
-  border-radius:10px;
-  overflow:hidden;
   border:1px solid #292929;
-}
-
-.product-image{
-  height:280px;
-  background:linear-gradient(135deg,#333,#111);
+  border-radius:10px;
+  min-height:180px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:50px;
+  text-align:center;
+  padding:25px;
+  transition:.3s;
 }
 
-.info{
-  padding:18px;
+.category:hover{
+  transform:translateY(-5px);
+  border-color:#666;
 }
 
-.info h3{
+.category h3{
+  font-size:21px;
   margin-bottom:8px;
 }
 
-.price{
-  color:#ccc;
-  margin-bottom:15px;
-}
-
-.order{
-  display:block;
-  text-align:center;
-  background:white;
-  color:black;
-  padding:11px;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:bold;
+.category p{
+  color:#999;
+  font-size:13px;
 }
 
 .about{
@@ -163,6 +153,7 @@ footer{
 }
 
 @media(max-width:600px){
+
   header{
     padding:15px 5%;
   }
@@ -175,6 +166,15 @@ footer{
   .hero h1{
     font-size:38px;
   }
+
+  .categories{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .category{
+    min-height:150px;
+  }
 }
 </style>
 </head>
@@ -182,106 +182,108 @@ footer{
 <body>
 
 <header>
+
   <div class="logo">SMR'S</div>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#products">Products</a>
+    <a href="#categories">Categories</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
+
 </header>
 
+
 <section class="hero" id="home">
+
   <div>
+
     <h1>SMR'S COLLECTION</h1>
+
     <p>Premium Style. Simple. Modern.</p>
-    <a class="btn" href="#products">SHOP NOW</a>
-  </div>
-</section>
 
-<section id="products">
-  <h2 class="title">OUR PRODUCTS</h2>
-
-  <div class="products">
-
-    <div class="card">
-      <div class="product-image">👕</div>
-
-      <div class="info">
-        <h3>Premium T-Shirt</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">
-          ORDER ON WHATSAPP
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="product-image">👕</div>
-
-      <div class="info">
-        <h3>Oversized T-Shirt</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">
-          ORDER ON WHATSAPP
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="product-image">👖</div>
-
-      <div class="info">
-        <h3>Track Pants</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">
-          ORDER ON WHATSAPP
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="product-image">🧥</div>
-
-      <div class="info">
-        <h3>Tracksuit</h3>
-        <p class="price">Price: Contact Us</p>
-        <a class="order" href="https://wa.me/923325189132">
-          ORDER ON WHATSAPP
-        </a>
-      </div>
-    </div>
+    <a class="btn" href="#categories">
+      SHOP NOW
+    </a>
 
   </div>
+
 </section>
+
+
+<section id="categories">
+
+  <h2 class="title">SHOP BY CATEGORY</h2>
+
+  <div class="categories">
+
+
+    <div class="category">
+
+      <div>
+        <h3>Tracksuits</h3>
+        <p>Explore Tracksuits</p>
+      </div>
+
+    </div>
+
+
+    <div class="category">
+
+      <div>
+        <h3>T-Shirts</h3>
+        <p>Explore T-Shirts</p>
+      </div>
+
+    </div>
+
+
+    <div class="category">
+
+      <div>
+        <h3>Unisex Hoodies</h3>
+        <p>Explore Hoodies</p>
+      </div>
+
+    </div>
+
+
+    <div class="category">
+
+      <div>
+        <h3>Unisex Zippers</h3>
+        <p>Explore Zippers</p>
+      </div>
+
+    </div>
+
+
+    <div class="category">
+
+      <div>
+        <h3>Shoes</h3>
+        <p>Joggers & More</p>
+      </div>
+
+    </div>
+
+
+    <div class="category">
+
+      <div>
+        <h3>Artificial Jewelry</h3>
+        <p>Explore Jewelry</p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
 
 <section id="about">
+
   <h2 class="title">ABOUT SMR'S</h2>
-
-  <p class="about">
-    SMR'S is a modern clothing collection focused on stylish,
-    comfortable and quality everyday wear.
-  </p>
-</section>
-
-<section class="contact" id="contact">
-  <h2 class="title">CONTACT US</h2>
-
-  <p style="margin-bottom:20px;">
-    WhatsApp: 0332 5189132
-  </p>
-
-  <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">Facebook</a>
-    <a href="https://wa.me/923325189132">WhatsApp</a>
-  </div>
-</section>
-
-<footer>
-  © 2026 SMR'S COLLECTION. All Rights Reserved.
-</footer>
-
-</body>
-</html>
