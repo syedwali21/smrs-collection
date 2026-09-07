@@ -1,1383 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMR'S COLLECTION - Premium Gen-Z Streetwear</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #ffffff;
-            --dark: #0a0a0a;
-            --dark-light: #1a1a1a;
-            --accent: #c9a7ff;
-            --text: #f5f5f5;
-            --text-muted: #b0b0b0;
-            --border: #2a2a2a;
-            --card-bg: #121212;
-            --hover: #2a2a2a;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background-color: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff, #c9a7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        .cart-icon {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            padding: 10px 16px;
-            border: 1px solid var(--border);
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text);
-            font-size: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cart-icon:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.6)), 
-                        url('banner.jpg') center/cover no-repeat fixed;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(201, 167, 255, 0.05) 0%, transparent 70%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: 40px 20px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid var(--accent);
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 30px;
-            background: rgba(201, 167, 255, 0.1);
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 10vw, 90px);
-            font-weight: 900;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff, #c9a7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .shop-now-btn {
-            display: inline-block;
-            padding: 16px 50px;
-            background: var(--primary);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .shop-now-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .shop-now-btn:hover {
-            color: var(--primary);
-            border-color: var(--accent);
-        }
-
-        .shop-now-btn:hover::before {
-            left: 0;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* ===== CATEGORIES SECTION ===== */
-        .categories-section {
-            padding: 100px 20px;
-            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
-            position: relative;
-        }
-
-        .categories-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .section-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 {
-            font-size: clamp(36px, 8vw, 56px);
-            font-weight: 900;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 16px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .category-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            group: 'card';
-            animation: fadeInUp 0.6s ease-out backwards;
-        }
-
-        .category-card:nth-child(1) { animation-delay: 0.1s; }
-        .category-card:nth-child(2) { animation-delay: 0.2s; }
-        .category-card:nth-child(3) { animation-delay: 0.3s; }
-        .category-card:nth-child(4) { animation-delay: 0.4s; }
-        .category-card:nth-child(5) { animation-delay: 0.5s; }
-        .category-card:nth-child(6) { animation-delay: 0.6s; }
-
-        .category-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(201, 167, 255, 0.15);
-        }
-
-        .category-image {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 100px;
-            overflow: hidden;
-        }
-
-        .category-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(201, 167, 255, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .category-card:hover .category-image::after {
-            opacity: 1;
-        }
-
-        .category-info {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .category-info h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .category-info p {
-            color: var(--text-muted);
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .category-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .category-link::after {
-            content: '→';
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .category-link::after {
-            transform: translateX(5px);
-        }
-
-        /* ===== FEATURED PRODUCTS SECTION ===== */
-        .products-section {
-            padding: 100px 20px;
-            background: var(--dark);
-            position: relative;
-        }
-
-        .products-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(201, 167, 255, 0.1);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(201, 167, 255, 0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .product-card:hover .product-image::before {
-            opacity: 1;
-        }
-
-        .product-info {
-            padding: 22px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-name {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-        }
-
-        .product-price {
-            color: var(--accent);
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .add-to-cart-btn {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            color: var(--text);
-            border-radius: 10px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: auto;
-        }
-
-        .add-to-cart-btn:hover {
-            background: var(--accent);
-            color: var(--dark);
-            border-color: var(--accent);
-        }
-
-        /* ===== ABOUT SECTION ===== */
-        .about-section {
-            padding: 100px 20px;
-            background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
-            position: relative;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
-        }
-
-        .about-content p {
-            font-size: 16px;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
-            padding: 100px 20px;
-            background: var(--dark);
-            text-align: center;
-            position: relative;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .contact-section h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .contact-section p {
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-block;
-            padding: 14px 30px;
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: var(--dark);
-            border-color: var(--accent);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #000000;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 13px;
-            letter-spacing: 0.5px;
-        }
-
-        /* ===== CART PANEL ===== */
-        .cart-panel {
-            display: none;
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: min(420px, 100vw);
-            height: 100vh;
-            background: var(--dark);
-            z-index: 2000;
-            padding: 30px;
-            overflow-y: auto;
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
-            border-left: 1px solid var(--border);
-            flex-direction: column;
-        }
-
-        .cart-panel.open {
-            display: flex;
-        }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .cart-header h2 {
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 28px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .close-cart:hover {
-            color: var(--accent);
-        }
-
-        .cart-items-container {
-            flex-grow: 1;
-            margin-bottom: 30px;
-            overflow-y: auto;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .cart-item-info strong {
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .cart-item-info {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .cart-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .qty-btn {
-            width: 28px;
-            height: 28px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text);
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .qty-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .cart-empty {
-            text-align: center;
-            color: var(--text-muted);
-            padding: 40px 20px;
-            font-size: 14px;
-        }
-
-        .cart-total {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(201, 167, 255, 0.1);
-            border-radius: 12px;
-            border: 1px solid rgba(201, 167, 255, 0.2);
-        }
-
-        .checkout-btn {
-            width: 100%;
-            padding: 16px;
-            background: var(--primary);
-            color: var(--dark);
-            border: none;
-            border-radius: 10px;
-            font-weight: 900;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .checkout-btn:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .checkout-btn:disabled {
-            background: var(--text-muted);
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
-
-        /* ===== CHECKOUT MODAL ===== */
-        .checkout-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 3000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(4px);
-        }
-
-        .checkout-modal.open {
-            display: flex;
-        }
-
-        .checkout-box {
-            width: min(500px, 100%);
-            background: var(--dark);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .checkout-box h2 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            letter-spacing: -0.5px;
-        }
-
-        .checkout-box input,
-        .checkout-box textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 16px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: var(--card-bg);
-            color: var(--text);
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .checkout-box input:focus,
-        .checkout-box textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .checkout-box textarea {
-            resize: none;
-            height: 100px;
-            margin-bottom: 24px;
-        }
-
-        .checkout-buttons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .checkout-box button {
-            flex: 1;
-            padding: 14px;
-            border-radius: 10px;
-            border: none;
-            font-weight: 800;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .place-order-btn {
-            background: var(--primary);
-            color: var(--dark);
-        }
-
-        .place-order-btn:hover {
-            background: var(--accent);
-        }
-
-        .cancel-btn {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .cancel-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            header {
-                padding: 12px 16px;
-            }
-
-            .header-container {
-                padding: 0;
-            }
-
-            .logo {
-                font-size: 16px;
-            }
-
-            nav {
-                gap: 15px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .hero {
-                height: 80vh;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .shop-now-btn {
-                padding: 14px 40px;
-                font-size: 12px;
-            }
-
-            .categories-section,
-            .products-section,
-            .about-section,
-            .contact-section {
-                padding: 60px 20px;
-            }
-
-            .section-header h2 {
-                font-size: 36px;
-            }
-
-            .categories-grid,
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-            }
-
-            .category-image {
-                height: 240px;
-                font-size: 70px;
-            }
-
-            .about-content h2 {
-                font-size: 36px;
-            }
-
-            .contact-section h2 {
-                font-size: 36px;
-            }
-
-            .cart-panel {
-                width: 100%;
-            }
-
-            .checkout-box {
-                padding: 30px 20px;
-            }
-
-            footer {
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 12px;
-            }
-
-            .logo {
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-
-            nav {
-                gap: 10px;
-            }
-
-            nav a {
-                display: none;
-            }
-
-            nav a:nth-child(1),
-            nav a:nth-child(2) {
-                display: inline;
-            }
-
-            .hero {
-                height: 70vh;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-                letter-spacing: 0;
-            }
-
-            .hero-badge {
-                font-size: 10px;
-                padding: 8px 16px;
-            }
-
-            .hero p {
-                font-size: 14px;
-            }
-
-            .categories-section,
-            .products-section,
-            .about-section,
-            .contact-section {
-                padding: 50px 16px;
-            }
-
-            .section-header h2 {
-                font-size: 28px;
-            }
-
-            .section-header p {
-                font-size: 14px;
-            }
-
-            .categories-grid,
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .category-image {
-                height: 200px;
-                font-size: 60px;
-            }
-
-            .category-info {
-                padding: 20px;
-            }
-
-            .category-info h3 {
-                font-size: 18px;
-            }
-
-            .about-content h2,
-            .contact-section h2 {
-                font-size: 28px;
-            }
-
-            .about-content p {
-                font-size: 14px;
-            }
-
-            .social-links {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .social-link {
-                width: 100%;
-            }
-
-            .cart-panel {
-                width: 100%;
-                padding: 20px;
-            }
-
-            .checkout-box {
-                padding: 20px;
-            }
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMR'S COLLECTION</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#0b0b0b;
+  color:white;
+}
+
+header{
+  background:#000;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+  border-bottom:1px solid #222;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+.hero{
+  min-height:75vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  background:linear-gradient(135deg,#111,#252525,#050505);
+}
+
+.hero h1{
+  font-size:55px;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#bbb;
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  background:white;
+  color:black;
+  padding:13px 25px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+section{
+  padding:55px 7%;
+}
+
+.title{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:35px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.card{
+  background:#151515;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #292929;
+}
+
+.product-image{
+  height:280px;
+  background:linear-gradient(135deg,#333,#111);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+}
+
+.info{
+  padding:18px;
+}
+
+.info h3{
+  margin-bottom:8px;
+}
+
+.price{
+  color:#ccc;
+  margin-bottom:15px;
+}
+
+.order{
+  display:block;
+  text-align:center;
+  background:white;
+  color:black;
+  padding:11px;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+.about{
+  text-align:center;
+  max-width:700px;
+  margin:auto;
+  color:#bbb;
+  line-height:1.8;
+}
+
+.contact{
+  text-align:center;
+  background:#111;
+}
+
+.social a{
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+  margin:8px;
+  border:1px solid #444;
+  padding:10px 18px;
+  border-radius:5px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#000;
+  color:#777;
+  font-size:13px;
+}
+
+@media(max-width:600px){
+  header{
+    padding:15px 5%;
+  }
+
+  nav a{
+    margin-left:8px;
+    font-size:12px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+}
+</style>
 </head>
+
 <body>
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="header-container">
-            <div class="logo">SMR'S</div>
-            <nav>
-                <a href="#home">HOME</a>
-                <a href="#categories">SHOP</a>
-                <a href="#products">PRODUCTS</a>
-                <a href="#about">ABOUT</a>
-                <a href="#contact">CONTACT</a>
-                <span class="cart-icon" onclick="openCart()">
-                    🛒 <span id="cartCount">0</span>
-                </span>
-            </nav>
-        </div>
-    </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">PREMIUM GEN-Z STREETWEAR</div>
-            <h1>SMR'S COLLECTION</h1>
-            <p>Modern Style. Unisex Vibes. Premium Quality.</p>
-            <a class="shop-now-btn" href="#categories">SHOP NOW</a>
-        </div>
-    </section>
+<header>
+  <div class="logo">SMR'S</div>
 
-    <!-- ===== CATEGORIES SECTION ===== -->
-    <section class="categories-section" id="categories">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>OUR CATEGORIES</h2>
-                <p>Explore our premium collection of unisex streetwear</p>
-            </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-            <div class="categories-grid">
-                <!-- T-Shirts -->
-                <div class="category-card">
-                    <div class="category-image">👕</div>
-                    <div class="category-info">
-                        <h3>Unisex T-Shirts</h3>
-                        <p>Classic and oversized tees in premium quality fabric. Perfect for any occasion.</p>
-                        <a class="category-link" href="#products" onclick="filterProducts('tshirts')">VIEW COLLECTION</a>
-                    </div>
-                </div>
+<section class="hero" id="home">
+  <div>
+    <h1>SMR'S COLLECTION</h1>
+    <p>Premium Style. Simple. Modern.</p>
+    <a class="btn" href="#products">SHOP NOW</a>
+  </div>
+</section>
 
-                <!-- Hoodies -->
-                <div class="category-card">
-                    <div class="category-image">🧢</div>
-                    <div class="category-info">
-                        <h3>Unisex Hoodies</h3>
-                        <p>Cozy and stylish hoodies for everyday wear. Perfect for the laid-back look.</p>
-                        <a class="category-link" href="#products" onclick="filterProducts('hoodies')">VIEW COLLECTION</a>
-                    </div>
-                </div>
+<section id="products">
+  <h2 class="title">OUR PRODUCTS</h2>
 
-                <!-- Zipper Hoodies -->
-                <div class="category-card">
-                    <div class="category-image">🪶</div>
-                    <div class="category-info">
-                        <h3>Unisex Zipper Hoodies</h3>
-                        <p>Versatile zip-up hoodies for layering and style. Your closet essential.</p>
-                        <a class="category-link" href="#products" onclick="filterProducts('zipper')">VIEW COLLECTION</a>
-                    </div>
-                </div>
+  <div class="products">
 
-                <!-- Joggers -->
-                <div class="category-card">
-                    <div class="category-image">🩳</div>
-                    <div class="category-info">
-                        <h3>Joggers</h3>
-                        <p>Comfortable and trendy joggers that pair perfectly with any top.</p>
-                        <a class="category-link" href="#products" onclick="filterProducts('joggers')">VIEW COLLECTION</a>
-                    </div>
-                </div>
+    <div class="card">
+      <div class="product-image">👕</div>
 
-                <!-- Trousers -->
-                <div class="category-card">
-                    <div class="category-image">👖</div>
-                    <div class="category-info">
-                        <h3>Trousers</h3>
-                        <p>Sleek and sophisticated trousers for a refined streetwear look.</p>
-                        <a class="category-link" href="#products" onclick="filterProducts('trousers')">VIEW COLLECTION</a>
-                    </div>
-                </div>
-
-                <!-- Tracksuits -->
-                <div class="category-card">
-                    <div class="category-image">🏃</div>
-                    <div class="category-info">
-                        <h3>Tracksuits</h3>
-                        <p>Complete your look with matching tracksuit sets. Comfort meets style.</p>
-                        <a class="category-link" href="#products" onclick="filterProducts('tracksuits')">VIEW COLLECTION</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FEATURED PRODUCTS SECTION ===== -->
-    <section class="products-section" id="products">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>FEATURED PRODUCTS</h2>
-                <p>Discover our best-selling pieces from every category</p>
-            </div>
-
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be generated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="about-section" id="about">
-        <div class="section-container">
-            <div class="about-content">
-                <h2>ABOUT SMR'S COLLECTION</h2>
-                <p>
-                    SMR'S COLLECTION is a modern, unisex clothing brand designed for the Gen-Z generation that values style, quality, and authenticity. We create premium streetwear that celebrates individuality and self-expression through fashion.
-                </p>
-                <p>
-                    Every piece is crafted with attention to detail, using high-quality fabrics to ensure comfort without compromising on style. Our mission is to make premium fashion accessible to everyone, delivering contemporary looks that make you feel confident and comfortable.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT SECTION ===== -->
-    <section class="contact-section" id="contact">
-        <div class="section-container">
-            <h2>GET IN TOUCH</h2>
-            <p>Have questions? Reach out to us on WhatsApp or follow us on social media</p>
-            <div class="social-links">
-                <a class="social-link" href="https://wa.me/923325189132" target="_blank">💬 WHATSAPP</a>
-                <a class="social-link" href="#" target="_blank">📸 INSTAGRAM</a>
-                <a class="social-link" href="#" target="_blank">👍 FACEBOOK</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        © 2026 SMR'S COLLECTION — ALL RIGHTS RESERVED. PREMIUM GEN-Z STREETWEAR.
-    </footer>
-
-    <!-- ===== CART PANEL ===== -->
-    <div class="cart-panel" id="cartPanel">
-        <div class="cart-header">
-            <h2>YOUR CART</h2>
-            <button class="close-cart" onclick="closeCart()">×</button>
-        </div>
-        <div class="cart-items-container" id="cartItems">
-            <div class="cart-empty">Your cart is empty</div>
-        </div>
-        <div class="cart-total">
-            Total: <span id="cartTotal">Rs. 0</span>
-        </div>
-        <button class="checkout-btn" id="checkoutBtn" onclick="openCheckout()">PROCEED TO CHECKOUT</button>
+      <div class="info">
+        <h3>Premium T-Shirt</h3>
+        <p class="price">Price: Contact Us</p>
+        <a class="order" href="https://wa.me/923325189132">
+          ORDER ON WHATSAPP
+        </a>
+      </div>
     </div>
 
-    <!-- ===== CHECKOUT MODAL ===== -->
-    <div class="checkout-modal" id="checkoutModal">
-        <div class="checkout-box">
-            <h2>ORDER DETAILS</h2>
-            <input id="customerName" type="text" placeholder="Your Full Name" />
-            <input id="customerPhone" type="tel" placeholder="Phone Number (+92...)" />
-            <textarea id="customerAddress" placeholder="Delivery Address"></textarea>
-            <div class="checkout-buttons">
-                <button class="place-order-btn" onclick="placeOrder()">PLACE ORDER ON WHATSAPP</button>
-                <button class="cancel-btn" onclick="closeCheckout()">CANCEL</button>
-            </div>
-        </div>
+    <div class="card">
+      <div class="product-image">👕</div>
+
+      <div class="info">
+        <h3>Oversized T-Shirt</h3>
+        <p class="price">Price: Contact Us</p>
+        <a class="order" href="https://wa.me/923325189132">
+          ORDER ON WHATSAPP
+        </a>
+      </div>
     </div>
 
-    <script>
-        // Sample products data
-        const products = [
-            { id: 1, name: 'Premium White T-Shirt', category: 'tshirts', emoji: '👕', price: 1499 },
-            { id: 2, name: 'Black Oversized Tee', category: 'tshirts', emoji: '👕', price: 1799 },
-            { id: 3, name: 'Cozy Black Hoodie', category: 'hoodies', emoji: '🧢', price: 2999 },
-            { id: 4, name: 'Grey Classic Hoodie', category: 'hoodies', emoji: '🧢', price: 2999 },
-            { id: 5, name: 'Black Zip Hoodie', category: 'zipper', emoji: '🪶', price: 3299 },
-            { id: 6, name: 'Navy Zip Hoodie', category: 'zipper', emoji: '🪶', price: 3299 },
-            { id: 7, name: 'Black Joggers', category: 'joggers', emoji: '🩳', price: 1999 },
-            { id: 8, name: 'Grey Track Joggers', category: 'joggers', emoji: '🩳', price: 1999 },
-            { id: 9, name: 'Black Formal Trousers', category: 'trousers', emoji: '👖', price: 2499 },
-            { id: 10, name: 'Charcoal Slim Trousers', category: 'trousers', emoji: '👖', price: 2499 },
-            { id: 11, name: 'Complete Black Tracksuit', category: 'tracksuits', emoji: '🏃', price: 4999 },
-            { id: 12, name: 'Grey Tracksuit Set', category: 'tracksuits', emoji: '🏃', price: 4999 },
-        ];
+    <div class="card">
+      <div class="product-image">👖</div>
 
-        let cart = [];
-        let currentFilter = null;
+      <div class="info">
+        <h3>Track Pants</h3>
+        <p class="price">Price: Contact Us</p>
+        <a class="order" href="https://wa.me/923325189132">
+          ORDER ON WHATSAPP
+        </a>
+      </div>
+    </div>
 
-        // Initialize products on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            displayProducts(products);
-        });
+    <div class="card">
+      <div class="product-image">🧥</div>
 
-        function displayProducts(productsToShow) {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
+      <div class="info">
+        <h3>Tracksuit</h3>
+        <p class="price">Price: Contact Us</p>
+        <a class="order" href="https://wa.me/923325189132">
+          ORDER ON WHATSAPP
+        </a>
+      </div>
+    </div>
 
-            productsToShow.forEach(product => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="product-image">${product.emoji}</div>
-                    <div class="product-info">
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-price">Rs. ${product.price.toLocaleString()}</div>
-                        <button class="add-to-cart-btn" onclick="addToCart('${product.name}', ${product.price})">ADD TO CART</button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+  </div>
+</section>
 
-        function filterProducts(category) {
-            if (currentFilter === category) {
-                displayProducts(products);
-                currentFilter = null;
-            } else {
-                const filtered = products.filter(p => p.category === category);
-                displayProducts(filtered);
-                currentFilter = category;
-            }
-        }
+<section id="about">
+  <h2 class="title">ABOUT SMR'S</h2>
 
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.quantity++;
-            } else {
-                cart.push({ name, price, quantity: 1 });
-            }
-            updateCart();
-            alert(`✓ ${name} added to cart!`);
-        }
+  <p class="about">
+    SMR'S is a modern clothing collection focused on stylish,
+    comfortable and quality everyday wear.
+  </p>
+</section>
 
-        function updateCart() {
-            const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            
-            document.getElementById('cartCount').innerText = cartCount;
-            document.getElementById('cartTotal').innerText = `Rs. ${cartTotal.toLocaleString()}`;
+<section class="contact" id="contact">
+  <h2 class="title">CONTACT US</h2>
 
-            const cartItemsContainer = document.getElementById('cartItems');
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
-                document.getElementById('checkoutBtn').disabled = true;
-            } else {
-                let html = '';
-                cart.forEach((item, index) => {
-                    html += `
-                        <div class="cart-item">
-                            <div class="cart-item-info">
-                                <strong>${item.name}</strong>
-                                <div>Rs. ${item.price.toLocaleString()}</div>
-                            </div>
-                            <div class="cart-item-qty">
-                                <button class="qty-btn" onclick="changeQty(${index}, -1)">−</button>
-                                <span>${item.quantity}</span>
-                                <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
-                            </div>
-                        </div>
-                    `;
-                });
-                cartItemsContainer.innerHTML = html;
-                document.getElementById('checkoutBtn').disabled = false;
-            }
-        }
+  <p style="margin-bottom:20px;">
+    WhatsApp: 0332 5189132
+  </p>
 
-        function changeQty(index, change) {
-            cart[index].quantity += change;
-            if (cart[index].quantity <= 0) {
-                cart.splice(index, 1);
-            }
-            updateCart();
-        }
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="https://wa.me/923325189132">WhatsApp</a>
+  </div>
+</section>
 
-        function openCart() {
-            document.getElementById('cartPanel').classList.add('open');
-        }
+<footer>
+  © 2026 SMR'S COLLECTION. All Rights Reserved.
+</footer>
 
-        function closeCart() {
-            document.getElementById('cartPanel').classList.remove('open');
-        }
-
-        function openCheckout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-            document.getElementById('checkoutModal').classList.add('open');
-        }
-
-        function closeCheckout() {
-            document.getElementById('checkoutModal').classList.remove('open');
-        }
-
-        function placeOrder() {
-            const name = document.getElementById('customerName').value.trim();
-            const phone = document.getElementById('customerPhone').value.trim();
-            const address = document.getElementById('customerAddress').value.trim();
-
-            if (!name || !phone || !address) {
-                alert('Please fill in all fields');
-                return;
-            }
-
-            let message = 'NEW ORDER - SMR\'S COLLECTION%0A%0A';
-            message += 'ITEMS:%0A';
-            
-            cart.forEach(item => {
-                message += `• ${item.name} x${item.quantity} = Rs. ${(item.price * item.quantity).toLocaleString()}%0A`;
-            });
-
-            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            message += `%0ATOTAL: Rs. ${total.toLocaleString()}%0A%0A`;
-            message += `CUSTOMER: ${encodeURIComponent(name)}%0A`;
-            message += `PHONE: ${encodeURIComponent(phone)}%0A`;
-            message += `ADDRESS: ${encodeURIComponent(address)}`;
-
-            window.open(`https://wa.me/923325189132?text=${message}`, '_blank');
-
-            cart = [];
-            updateCart();
-            closeCheckout();
-            closeCart();
-            document.getElementById('customerName').value = '';
-            document.getElementById('customerPhone').value = '';
-            document.getElementById('customerAddress').value = '';
-        }
-
-        // Close modals when clicking outside
-        document.addEventListener('click', (e) => {
-            const checkout = document.getElementById('checkoutModal');
-            if (e.target === checkout) {
-                closeCheckout();
-            }
-        });
-    </script>
 </body>
 </html>
