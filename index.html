@@ -3,857 +3,465 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SMR'S COLLECTION</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
 margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#080808;
-color:white;
+background:#0b0b0b;
+color:#fff;
+font-family:Arial,sans-serif;
 }
-
-/* HEADER */
-
 header{
-background:#000;
-padding:22px 15px;
 text-align:center;
-border-bottom:1px solid #222;
-}
-
-.logo{
-font-size:30px;
-font-weight:bold;
-letter-spacing:4px;
-}
-
-/* HERO */
-
-.hero{
-min-height:430px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:70px 20px;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
-#151515;
-}
-
-.hero-content{
-max-width:800px;
-}
-
-.hero h2{
-font-size:48px;
-margin:0 0 15px;
-letter-spacing:4px;
-}
-
-.hero p{
-font-size:18px;
-color:#ccc;
-margin:0;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 28px;
-background:white;
-color:#000;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-background:#ddd;
-transform:translateY(-2px);
-}
-
-/* SECTIONS */
-
-section{
-padding:65px 20px;
-}
-
-.title{
-text-align:center;
-font-size:30px;
-letter-spacing:2px;
-margin:0 0 40px;
-}
-
-/* CATEGORIES */
-
-.categories{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:18px;
-max-width:1100px;
-margin:auto;
-}
-
-.category{
-background:#151515;
-border:1px solid #292929;
-padding:32px 15px;
-text-align:center;
-border-radius:10px;
-transition:.3s;
-}
-
-.category:hover{
-border-color:#777;
-transform:translateY(-4px);
-}
-
-.category h3{
-margin:0 0 10px;
-font-size:19px;
-}
-
-.category p{
-margin:0;
-color:#999;
-font-size:14px;
-}
-
-/* PRODUCTS */
-
-.product-section{
-background:#0c0c0c;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1150px;
-margin:auto;
-}
-
-.card{
-background:#151515;
-border:1px solid #292929;
-border-radius:12px;
-padding:15px;
-text-align:center;
-overflow:hidden;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-border-color:#666;
-}
-
-.card img{
-width:100%;
-height:auto;
-display:block;
-border-radius:8px;
-margin-bottom:15px;
-}
-
-.card h3{
-font-size:20px;
-margin:10px 0;
-letter-spacing:1px;
-}
-
-.card p{
-color:#bbb;
-font-size:15px;
-margin:12px 0;
-}
-
-select{
-width:100%;
-padding:12px;
-margin:5px 0;
-background:#222;
-color:white;
-border:1px solid #444;
-border-radius:6px;
-font-size:14px;
-}
-
-.order{
-display:block;
-margin-top:15px;
-padding:13px;
-background:white;
-color:#000;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-transition:.3s;
-}
-
-.order:hover{
-background:#ddd;
-}
-
-/* ABOUT */
-
-.about-section{
+padding:25px 12px;
 background:#111;
+border-bottom:1px solid #333;
 }
-
-.about{
-max-width:750px;
+.logo{
+font-size:35px;
+font-weight:900;
+letter-spacing:4px;
+color:#d8b46a;
+}
+header p{color:#bbb}
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+padding:13px;
+background:#171717;
+position:sticky;
+top:0;
+z-index:5;
+}
+nav a{
+color:#fff;
+text-decoration:none;
+border:1px solid #444;
+padding:9px;
+border-radius:4px;
+font-size:13px;
+}
+nav a:hover{background:#d8b46a;color:#000}
+.hero{
+text-align:center;
+padding:60px 15px;
+background:linear-gradient(135deg,#202020,#080808);
+}
+.hero h1{font-size:35px}
+.hero p{color:#ccc;line-height:1.7}
+.gold,.section-title{color:#d8b46a}
+.btn,.order{
+display:inline-block;
+background:#d8b46a;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+padding:12px 18px;
+border-radius:4px;
+}
+section{
+max-width:1200px;
 margin:auto;
+padding:32px 14px;
+}
+.section-title{
+text-align:center;
+font-size:27px;
+margin-bottom:12px;
+}
+.section-desc{
 text-align:center;
 color:#aaa;
-line-height:1.8;
-font-size:16px;
+margin-bottom:25px;
 }
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-background:#080808;
-}
-
-.contact p{
-color:#ccc;
-font-size:17px;
-}
-
-/* SOCIAL */
-
-.social{
-margin-top:25px;
-}
-
-.social a{
-display:inline-block;
-margin:5px;
-padding:10px 18px;
-border:1px solid #444;
-border-radius:5px;
-color:white;
-text-decoration:none;
-font-size:14px;
-transition:.3s;
-}
-
-.social a:hover{
-background:white;
-color:black;
-}
-
-/* FOOTER */
-
-footer{
-background:#000;
-text-align:center;
-padding:25px 15px;
-color:#777;
-font-size:14px;
-border-top:1px solid #222;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-.hero{
-min-height:380px;
-padding:50px 20px;
-}
-
-.hero h2{
-font-size:34px;
-letter-spacing:2px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-section{
-padding:50px 15px;
-}
-
-.title{
-font-size:25px;
-}
-
 .products{
-grid-template-columns:1fr;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+gap:18px;
 }
-
-.categories{
-grid-template-columns:1fr 1fr;
-gap:10px;
+.card{
+background:#151515;
+border:1px solid #333;
+border-radius:8px;
+overflow:hidden;
+padding-bottom:16px;
 }
-
-.category{
-padding:25px 8px;
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+display:block;
+background:#222;
 }
-
-.logo{
-font-size:24px;
+.card h3{margin:14px 12px 7px}
+.description{
+color:#aaa;
+font-size:13px;
+margin:0 12px;
 }
-
+.price{
+color:#d8b46a;
+font-weight:bold;
+margin:12px;
 }
-
+.card label{
+display:block;
+margin:12px 12px 5px;
+font-size:13px;
+}
+.card select{
+width:calc(100% - 24px);
+margin:0 12px;
+padding:10px;
+background:#080808;
+color:white;
+border:1px solid #555;
+border-radius:4px;
+}
+.card .order{
+display:block;
+text-align:center;
+margin:16px 12px 0;
+}
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
+gap:12px;
+}
+.category-box{
+padding:20px 8px;
+text-align:center;
+background:#161616;
+color:#fff;
+border:1px solid #393939;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+}
+.category-box span{
+display:block;
+color:#d8b46a;
+font-size:11px;
+margin-top:8px;
+}
+.coming{
+text-align:center;
+padding:30px 10px;
+border:1px solid #333;
+background:#151515;
+border-radius:6px;
+}
+.coming span{color:#d8b46a;font-weight:bold}
+.about,.contact{
+text-align:center;
+color:#ccc;
+line-height:1.8;
+}
+.contact a,footer a{color:#d8b46a}
+footer{
+text-align:center;
+padding:24px 10px;
+background:#111;
+color:#aaa;
+line-height:2;
+border-top:1px solid #333;
+}
+@media(max-width:480px){
+.hero h1{font-size:28px}
+.logo{font-size:29px}
+.card img{height:275px}
+nav a{font-size:12px;padding:8px}
+}
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-
 <header>
-
-<div class="logo">
-SMR'S COLLECTION
-</div>
-
+<div class="logo">SMR'S</div>
+<p>SMR'S COLLECTION | Wear Your Style</p>
 </header>
 
+<nav>
+<a href="#home">Home</a>
+<a href="#tshirts">T-Shirts</a>
+<a href="#tracksuits">Tracksuits</a>
+<a href="#hoodies">Hoodies</a>
+<a href="#zippers">Zippers</a>
+<a href="#comingsoon">Coming Soon</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<!-- HERO -->
-
-<div class="hero">
-
-<div class="hero-content">
-
-<h2>WEAR YOUR ATTITUDE</h2>
-
-<p>
-Streetwear • Casual Lifestyle • Everyday Style
-</p>
-
-<a class="btn" href="#tshirts">
-SHOP T-SHIRTS
-</a>
-
+<div class="hero" id="home">
+<h1>WELCOME TO <span class="gold">SMR'S</span></h1>
+<p>Streetwear. Comfort. Confidence.<br>
+Discover Your Style.</p>
+<a class="btn" href="#tshirts">EXPLORE COLLECTION</a>
 </div>
 
+<section>
+<h2 class="section-title">SHOP BY CATEGORY</h2>
+<div class="category-grid">
+<a class="category-box" href="#tshirts">T-SHIRTS<span>EXPLORE</span></a>
+<a class="category-box" href="#tracksuits">TRACKSUITS<span>EXPLORE</span></a>
+<a class="category-box" href="#hoodies">HOODIES<span>EXPLORE</span></a>
+<a class="category-box" href="#zippers">ZIPPER HOODIES<span>EXPLORE</span></a>
+<a class="category-box" href="#comingsoon">SHOES<span>COMING SOON</span></a>
+<a class="category-box" href="#comingsoon">ARTIFICIAL JEWELRY<span>COMING SOON</span></a>
 </div>
-
-
-<!-- CATEGORIES -->
-
-<section id="categories">
-
-<h2 class="title">
-SHOP BY CATEGORY
-</h2>
-
-<div class="categories">
-
-<a href="#tshirts" style="text-decoration:none;color:white;">
-
-<div class="category">
-
-<h3>
-T-Shirts
-</h3>
-
-<p>
-Normal & Oversized
-</p>
-
-</div>
-
-</a>
-
-
-<div class="category">
-
-<h3>
-Tracksuits
-</h3>
-
-<p>
-Coming Soon
-</p>
-
-</div>
-
-
-<div class="category">
-
-<h3>
-Unisex Hoodies
-</h3>
-
-<p>
-Coming Soon
-</p>
-
-</div>
-
-
-<div class="category">
-
-<h3>
-Unisex Zippers
-</h3>
-
-<p>
-Coming Soon
-</p>
-
-</div>
-
-
-<div class="category">
-
-<h3>
-Shoes
-</h3>
-
-<p>
-Joggers & More
-</p>
-
-</div>
-
-
-<div class="category">
-
-<h3>
-Artificial Jewelry
-</h3>
-
-<p>
-Coming Soon
-</p>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- T-SHIRTS -->
-
-<section class="product-section" id="tshirts">
-
-<h2 class="title">
-T-SHIRTS
-</h2>
+<section id="tshirts">
+<h2 class="section-title">T-SHIRT COLLECTION</h2>
+<p class="section-desc">Choose your design, fit, colour and size.</p>
 
 <div class="products">
 
+<article class="card">
+<img src="no-signal.png" alt="No Signal">
+<h3>No Signal</h3>
+<p class="description">Streetwear T-shirt</p>
+<p class="price">Price: Contact Us</p>
+<label>Fit</label>
+<select class="fit"><option>Normal Fit</option><option>Oversized Fit</option></select>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>White</option><option>Navy Blue</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
-<!-- NO SIGNAL -->
+<article class="card">
+<img src="rebel-club.png" alt="Rebel Club">
+<h3>Rebel Club</h3>
+<p class="description">Streetwear T-shirt</p>
+<p class="price">Price: Contact Us</p>
+<label>Fit</label>
+<select class="fit"><option>Normal Fit</option><option>Oversized Fit</option></select>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>White</option><option>Navy Blue</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
-<div class="card">
+<article class="card">
+<img src="City-runner.png" alt="City Runner">
+<h3>City Runner</h3>
+<p class="description">Urban Lifestyle T-shirt</p>
+<p class="price">Price: Contact Us</p>
+<label>Fit</label>
+<select class="fit"><option>Normal Fit</option><option>Oversized Fit</option></select>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>White</option><option>Navy Blue</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
-<img src="no-signal.png" alt="SMR'S No Signal T-Shirt">
+<article class="card">
+<img src="Crown-01.png" alt="Crown 01">
+<h3>Crown 01</h3>
+<p class="description">Signature Collection</p>
+<p class="price">Price: Contact Us</p>
+<label>Fit</label>
+<select class="fit"><option>Normal Fit</option><option>Oversized Fit</option></select>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>White</option><option>Navy Blue</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
-<h3>
-NO SIGNAL
-</h3>
+<article class="card">
+<img src="after-dark.png" alt="After Dark">
+<h3>After Dark</h3>
+<p class="description">Streetwear T-shirt</p>
+<p class="price">Price: Contact Us</p>
+<label>Fit</label>
+<select class="fit"><option>Normal Fit</option><option>Oversized Fit</option></select>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>White</option><option>Navy Blue</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
-<select>
-
-<option>Normal Fit</option>
-<option>Oversized Fit</option>
-
-</select>
-
-
-<select>
-
-<option>Black</option>
-<option>White</option>
-<option>Navy Blue</option>
-
-</select>
-
-
-<select>
-
-<option>Small (S)</option>
-<option>Medium (M)</option>
-<option>Large (L)</option>
-<option>Extra Large (XL)</option>
-
-</select>
-
-
-<p>
-Price: Contact Us
-</p>
-
-
-<a class="order"
-href="https://wa.me/923325189132?text=I%20want%20to%20order%20No%20Signal%20T-Shirt"
-target="_blank">
-
-ORDER ON WHATSAPP
-
-</a>
-
-</div>
-
-
-<!-- REBEL CLUB -->
-
-<div class="card">
-
-<img src="rebel-club.png" alt="SMR'S Rebel Club T-Shirt">
-
-<h3>
-REBEL CLUB
-</h3>
-
-<select>
-
-<option>Normal Fit</option>
-<option>Oversized Fit</option>
-
-</select>
-
-
-<select>
-
-<option>Black</option>
-<option>White</option>
-<option>Navy Blue</option>
-
-</select>
-
-
-<select>
-
-<option>Small (S)</option>
-<option>Medium (M)</option>
-<option>Large (L)</option>
-<option>Extra Large (XL)</option>
-
-</select>
-
-
-<p>
-Price: Contact Us
-</p>
-
-
-<a class="order"
-href="https://wa.me/923325189132?text=I%20want%20to%20order%20Rebel%20Club%20T-Shirt"
-target="_blank">
-
-ORDER ON WHATSAPP
-
-</a>
+<article class="card">
+<img src="no-rules.png" alt="No Rules">
+<h3>No Rules</h3>
+<p class="description">Casual Lifestyle T-shirt</p>
+<p class="price">Price: Contact Us</p>
+<label>Fit</label>
+<select class="fit"><option>Normal Fit</option><option>Oversized Fit</option></select>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>White</option><option>Navy Blue</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
 </div>
-
-
-<!-- CITY RUNNER -->
-
-<div class="card">
-
-<img src="City-runner.png" alt="SMR'S City Runner T-Shirt">
-
-<h3>
-CITY RUNNER
-</h3>
-
-<select>
-
-<option>Normal Fit</option>
-<option>Oversized Fit</option>
-
-</select>
-
-
-<select>
-
-<option>Black</option>
-<option>White</option>
-<option>Navy Blue</option>
-
-</select>
-
-
-<select>
-
-<option>Small (S)</option>
-<option>Medium (M)</option>
-<option>Large (L)</option>
-<option>Extra Large (XL)</option>
-
-</select>
-
-
-<p>
-Price: Contact Us
-</p>
-
-
-<a class="order"
-href="https://wa.me/923325189132?text=I%20want%20to%20order%20City%20Runner%20T-Shirt"
-target="_blank">
-
-ORDER ON WHATSAPP
-
-</a>
-
-</div>
-
-
-<!-- CROWN 01 -->
-
-<div class="card">
-
-<img src="Crown-01.png" alt="SMR'S Crown 01 T-Shirt">
-
-<h3>
-CROWN 01
-</h3>
-
-<select>
-
-<option>Normal Fit</option>
-<option>Oversized Fit</option>
-
-</select>
-
-
-<select>
-
-<option>Black</option>
-<option>White</option>
-<option>Navy Blue</option>
-
-</select>
-
-
-<select>
-
-<option>Small (S)</option>
-<option>Medium (M)</option>
-<option>Large (L)</option>
-<option>Extra Large (XL)</option>
-
-</select>
-
-
-<p>
-Price: Contact Us
-</p>
-
-
-<a class="order"
-href="https://wa.me/923325189132?text=I%20want%20to%20order%20Crown%2001%20T-Shirt"
-target="_blank">
-
-ORDER ON WHATSAPP
-
-</a>
-
-</div>
-
-
-<!-- AFTER DARK -->
-
-<div class="card">
-
-<img src="after-dark.png" alt="SMR'S After Dark T-Shirt">
-
-<h3>
-AFTER DARK
-</h3>
-
-<select>
-
-<option>Normal Fit</option>
-<option>Oversized Fit</option>
-
-</select>
-
-
-<select>
-
-<option>Black</option>
-<option>White</option>
-<option>Navy Blue</option>
-
-</select>
-
-
-<select>
-
-<option>Small (S)</option>
-<option>Medium (M)</option>
-<option>Large (L)</option>
-<option>Extra Large (XL)</option>
-
-</select>
-
-
-<p>
-Price: Contact Us
-</p>
-
-
-<a class="order"
-href="https://wa.me/923325189132?text=I%20want%20to%20order%20After%20Dark%20T-Shirt"
-target="_blank">
-
-ORDER ON WHATSAPP
-
-</a>
-
-</div>
-
-
-<!-- NO RULES -->
-
-<div class="card">
-
-<img src="no-rules.png" alt="SMR'S No Rules T-Shirt">
-
-<h3>
-NO RULES
-</h3>
-
-<select>
-
-<option>Normal Fit</option>
-<option>Oversized Fit</option>
-
-</select>
-
-
-<select>
-
-<option>Black</option>
-<option>White</option>
-<option>Navy Blue</option>
-
-</select>
-
-
-<select>
-
-<option>Small (S)</option>
-<option>Medium (M)</option>
-<option>Large (L)</option>
-<option>Extra Large (XL)</option>
-
-</select>
-
-
-<p>
-Price: Contact Us
-</p>
-
-
-<a class="order"
-href="https://wa.me/923325189132?text=I%20want%20to%20order%20No%20Rules%20T-Shirt"
-target="_blank">
-
-ORDER ON WHATSAPP
-
-</a>
-
-</div>
-
-
-</div>
-
 </section>
 
+<section id="tracksuits">
+<h2 class="section-title">TRACKSUITS</h2>
+<p class="section-desc">Comfortable everyday style.</p>
+<div class="products">
+<article class="card">
+<img src="Track%20suits-WA0003.jpg" alt="SMR'S Tracksuit">
+<h3>SMR'S Tracksuit</h3>
+<p class="description">Multiple colours available</p>
+<p class="price">Price: Contact Us</p>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>Navy Blue</option><option>Other Available Colour</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
+</div>
+</section>
 
-<!-- ABOUT -->
+<section id="hoodies">
+<h2 class="section-title">UNISEX HOODIES</h2>
+<p class="section-desc">Comfort meets streetwear.</p>
+<div class="products">
 
-<section class="about-section">
+<article class="card">
+<img src="White%20hoodie-WA0002.jpg" alt="White Hoodie">
+<h3>Classic White Hoodie</h3>
+<p class="description">Unisex Hoodie</p>
+<p class="price">Price: Contact Us</p>
+<label>Colour</label>
+<select class="colour"><option>White</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
-<h2 class="title">
-ABOUT SMR'S
-</h2>
+<article class="card">
+<img src="3hoodies%20-WA0007.jpg" alt="Hoodie Colour Collection">
+<h3>Hoodie Colour Collection</h3>
+<p class="description">Black, Navy Blue and Red</p>
+<p class="price">Price: Contact Us</p>
+<label>Colour</label>
+<select class="colour"><option>Black</option><option>Navy Blue</option><option>Red</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
 
+</div>
+</section>
+
+<section id="zippers">
+<h2 class="section-title">UNISEX ZIPPER HOODIES</h2>
+<p class="section-desc">Layer up with SMR'S style.</p>
+<div class="products">
+
+<article class="card">
+<img src="White%20zipper%20hoodie-WA0005.jpg" alt="White Zipper Hoodie">
+<h3>Classic White Zipper</h3>
+<p class="description">Full zip hoodie</p>
+<p class="price">Price: Contact Us</p>
+<label>Colour</label>
+<select class="colour"><option>White</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
+
+<article class="card">
+<img src="3Zipper%20hoodie-0006.jpg" alt="Zipper Hoodie Collection">
+<h3>Zipper Hoodie Collection</h3>
+<p class="description">Multiple colours available</p>
+<p class="price">Price: Contact Us</p>
+<label>Colour</label>
+<select class="colour"><option>Navy Blue</option><option>Black</option><option>Dark Green</option><option>Red</option></select>
+<label>Size</label>
+<select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<a class="order" href="https://wa.me/923325189132">ORDER ON WHATSAPP</a>
+</article>
+
+</div>
+</section>
+
+<section id="comingsoon">
+<h2 class="section-title">COMING SOON</h2>
+<p class="section-desc">More SMR'S collections are on the way.</p>
+<div class="products">
+<div class="coming">
+<h3>SHOES</h3>
+<span>COMING SOON</span>
+</div>
+<div class="coming">
+<h3>ARTIFICIAL JEWELRY</h3>
+<span>COMING SOON</span>
+</div>
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">ABOUT SMR'S</h2>
 <p class="about">
-
-SMR'S COLLECTION is a modern streetwear and casual lifestyle
-brand focused on stylish, comfortable and quality everyday wear.
-Our goal is to bring clean designs, confident style and everyday
-comfort together.
-
+SMR'S COLLECTION is a modern clothing brand focused on stylish,
+comfortable and quality everyday wear. Our goal is to bring streetwear
+style and confidence into your wardrobe.
 </p>
-
 </section>
 
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-<h2 class="title">
-CONTACT US
-</h2>
-
-
+<section id="contact">
+<h2 class="section-title">CONTACT US</h2>
+<div class="contact">
+<p>For orders and prices, contact us on WhatsApp.</p>
+<p><a href="https://wa.me/923325189132">WhatsApp: 0332 5189132</a></p>
 <p>
-WhatsApp: 0332 5189132
+<a href="https://www.instagram.com/smrs.offical221?stkn=cnRsbjBhM3R6d25t">Instagram</a> |
+<a href="https://www.facebook.com/share/1Mu9szpadn/">Facebook</a>
 </p>
-
-
-<a class="btn"
-href="https://wa.me/923325189132"
-target="_blank">
-
-WHATSAPP US
-
-</a>
-
-
-<div class="social">
-
-<a
-href="https://www.instagram.com/smrs.offical221?stkn=cnRsbjBhM3R6d25t"
-target="_blank">
-
-Instagram
-
-</a>
-
-
-<a
-href="https://www.facebook.com/share/1Mu9szpadn/"
-target="_blank">
-
-Facebook
-
-</a>
-
 </div>
-
 </section>
-
-
-<!-- FOOTER -->
 
 <footer>
-
-© 2026 SMR'S COLLECTION. All Rights Reserved.
-
+<strong>SMR'S COLLECTION</strong><br>
+Wear Your Style<br>
+<a href="#home">Back to Top</a><br>
+© 2026 SMR'S COLLECTION. All rights reserved.
 </footer>
 
+<script>
+document.querySelectorAll('.card').forEach(function(card){
+  const button = card.querySelector('.order');
+  if (!button) return;
+
+  button.addEventListener('click', function(event){
+    event.preventDefault();
+
+    const product = card.querySelector('h3').textContent;
+    const fit = card.querySelector('.fit');
+    const colour = card.querySelector('.colour');
+    const size = card.querySelector('.size');
+
+    let message = "Assalam-o-Alaikum SMR'S COLLECTION!\n";
+    message += "I want to order: " + product + "\n";
+
+    if (fit) message += "Fit: " + fit.value + "\n";
+    if (colour) message += "Colour: " + colour.value + "\n";
+    if (size) message += "Size: " + size.value + "\n";
+
+    message += "Please tell me the price and availability.";
+
+    const url = "https://wa.me/923325189132?text="
+      + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+  });
+});
+</script>
 
 </body>
 </html>
